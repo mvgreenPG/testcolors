@@ -9,214 +9,237 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --lime-15: hsl(112deg 84% 15%);
-            --lime-97: hsl(111deg 87% 97%);
-            --lime-50: hsl(112deg 84% 50%);
-            --lime-25: hsl(112deg 84% 25%);
-            --lime-35: hsl(112deg 84% 35%);
-            --lime-40: hsl(112deg 84% 40%);
-            /* Kermit (Lime) badge tokens - from new-colors.md */
-            --kermit-border: #B9EA93;
-            --kermit-soft-bg: #F6FFEE;
-            --kermit-soft-text: #318019;
+            /* Primer-style base colors */
+            --lime-15: #162313;
+            --lime-25: #284919;
+            --lime-35: #318019;
+            --lime-40: #6dbd43;
+            --lime-50: #6dbd43;
+            --lime-75: #6dbd43;
+            --lime-90: #b9ea93;
+            --lime-97: #f6ffee;
+            /* Kermit (Lime) badge tokens */
+            --kermit-border: #8FDB66;
+            --kermit-soft-bg: #E3F9D1;
+            --kermit-soft-text: #2A4C1A;
             --kermit-soft-icon: #318019;
-            --kermit-heavy-bg: #318019;
+            --kermit-heavy-bg: #4FA02F;
             --kermit-heavy-text: #FFF;
-            --kermit-heavy-icon: #B9EA93;
-            /* Kermit Dark Mode (used when Core-Theme--Dark) */
-            --kermit-dark-border: #2A4C1A;
-            --kermit-dark-soft-bg: #162313;
-            --kermit-dark-soft-text: #6DBD43;
-            --kermit-dark-soft-icon: #6DBD43;
+            --kermit-heavy-icon: #E3F9D1;
+            /* Kermit Dark Mode */
+            --kermit-dark-border: #4FA02F;
+            --kermit-dark-soft-bg: #1F3814;
+            --kermit-dark-soft-text: #B9EA93;
+            --kermit-dark-soft-icon: #8FDB66;
             --kermit-dark-heavy-bg: #6DBD43;
-            --kermit-dark-heavy-text: #FFF;
-            --kermit-dark-heavy-icon: #2A4C1A;
-            --pineapple-15: hsl(45deg 100% 15%);
-            --pineapple-97: hsl(44deg 100% 97%);
-            --pineapple-50: hsl(45deg 100% 50%);
-            --tangerine-97: hsl(16deg 100% 97%);
-            --tangerine-50: hsl(16deg 100% 50%);
-            --apple-30: hsl(350deg 88% 30%);
-            --apple-45: hsl(350deg 89% 45%);
-            --apple-50: hsl(350deg 89% 50%);
-            --apple-55: hsl(350deg 89% 55%);
-            --apple-70: hsl(350deg 88% 70%);
-            --apple-97: hsl(351deg 87% 97%);
-            --plum-20: hsl(264deg 56% 20%);
-            --plum-50: hsl(264deg 56% 50%);
-            --plum-60: hsl(264deg 56% 60%);
-            --plum-70: hsl(264deg 56% 70%);
-            --plum-75: hsl(264deg 56% 75%);
-            --plum-97: hsl(264deg 60% 97%);
-            --watermelon-97: hsl(180deg 72% 97%);
-            --watermelon-40: hsl(180deg 72% 40%);
-            --coconut-30: hsl(15deg 100% 30%);
-            --coconut-97: hsl(15deg 100% 97%);
-            --coconut-40: hsl(15deg 100% 40%);
-            --raspberry-97: hsl(330deg 86% 97%);
-            --raspberry-50: hsl(330deg 86% 50%);
-            --slate-10: hsl(0deg 0% 10%);
-            --slate-20: hsl(0deg 0% 20%);
-            --slate-40: hsl(0deg 0% 40%);
-            --slate-94: hsl(0deg 0% 94%);
-            --slate-50: hsl(0deg 0% 50%);
-            --slate-100: hsl(0deg 0% 100%);
-            --elderberry-97: hsl(242deg 92% 97%);
-            --elderberry-50: hsl(242deg 92% 50%);
-            --elderberry-60: hsl(242deg 92% 60%);
-            --blueberry-25: hsl(220deg 37% 25%);
-            --blueberry-45: hsl(214deg 21% 45%);
-            --blueberry-97: hsl(220deg 37% 97%);
-            --blueberry-50: hsl(215deg 20% 50%);
+            --kermit-dark-heavy-text: #162313;
+            --kermit-dark-heavy-icon: #1F3814;
+            --pineapple-05: #2b2112;
+            --pineapple-15: #594218;
+            --pineapple-45: #ad5f05;
+            --pineapple-50: #ad5f05;
+            --pineapple-65: #e6b146;
+            --pineapple-75: #e6b146;
+            --pineapple-90: #fee494;
+            --pineapple-97: #fffbe7;
+            --tangerine-30: #ce391c;
+            --tangerine-50: #e67047;
+            --tangerine-80: #febb99;
+            --tangerine-97: #fff2e9;
+            --apple-30: #57191d;
+            --apple-45: #cd1829;
+            --apple-50: #cd1829;
+            --apple-55: #cd1829;
+            --apple-60: #cd1829;
+            --apple-70: #e76468;
+            --apple-75: #ea4858;
+            --apple-85: #e76468;
+            --apple-97: #fff1f0;
+            --plum-20: #1a1325;
+            --plum-50: #5326a8;
+            --plum-60: #5326a8;
+            --plum-70: #a078d3;
+            --plum-75: #a078d3;
+            --plum-90: #d3aff5;
+            --plum-97: #f9f1ff;
+            --watermelon-97: #f0fffc;
+            --watermelon-40: #3cbcb7;
+            --watermelon-50: #1a7c7f;
+            --coconut-30: #98270d;
+            --coconut-40: #f08c44;
+            --coconut-80: #f59e8a;
+            --coconut-97: #fff4f1;
+            --raspberry-97: #fff0f6;
+            --raspberry-50: #c2247f;
+            --raspberry-60: #db549a;
+            --slate-10: #161b22;
+            --slate-20: #21262d;
+            --slate-40: #2d3743;
+            --slate-45: #59636e;
+            --slate-50: #5d7089;
+            --slate-94: #d1d9e0;
+            --slate-97: #f5f7fa;
+            --slate-100: #ffffff;
+            --elderberry-97: #f0f0fe;
+            --elderberry-50: #4444f4;
+            --elderberry-60: #6a88e1;
+            --elderberry-90: #8b91f4;
+            --blueberry-25: #00183d;
+            --blueberry-45: #003270;
+            --blueberry-50: #2d5696;
+            --blueberry-85: #769bd6;
+            --blueberry-92: #b7d7ff;
+            --blueberry-97: #f0f6ff;
+            --blueberry-98: #f0f6ff;
             /* Animal (Apple) badge tokens */
-            --animal-border: #E76468;
-            --animal-soft-bg: #FFF1F0;
-            --animal-soft-text: #CD1829;
-            --animal-soft-icon: #CD1829;
-            --animal-heavy-bg: #CD1829;
+            --animal-border: #EA4858;
+            --animal-soft-bg: #FFCDD0;
+            --animal-soft-text: #721018;
+            --animal-soft-icon: #A01420;
+            --animal-heavy-bg: #A01420;
             --animal-heavy-text: #FFF;
-            --animal-heavy-icon: #E76468;
-            --animal-dark-border: #4A1520;
-            --animal-dark-soft-bg: #2A1215;
-            --animal-dark-soft-text: #E76468;
-            --animal-dark-soft-icon: #E76468;
-            --animal-dark-heavy-bg: #E76468;
-            --animal-dark-heavy-text: #FFF;
-            --animal-dark-heavy-icon: #4A1520;
+            --animal-heavy-icon: #FFCDD0;
+            --animal-dark-border: #A01420;
+            --animal-dark-soft-bg: #3D1417;
+            --animal-dark-soft-text: #FFCDD0;
+            --animal-dark-soft-icon: #EA4858;
+            --animal-dark-heavy-bg: #EA4858;
+            --animal-dark-heavy-text: #2A1215;
+            --animal-dark-heavy-icon: #3D1417;
             /* Scooter (Pineapple) badge tokens */
             --scooter-border: #E6B146;
-            --scooter-soft-bg: #FFFBE7;
-            --scooter-soft-text: #AD5F05;
-            --scooter-soft-icon: #AD5F05;
-            --scooter-heavy-bg: #AD5F05;
+            --scooter-soft-bg: #FFF3C2;
+            --scooter-soft-text: #594218;
+            --scooter-soft-icon: #8A4B04;
+            --scooter-heavy-bg: #8A4B04;
             --scooter-heavy-text: #FFF;
-            --scooter-heavy-icon: #E6B146;
-            --scooter-dark-border: #3D2E0E;
-            --scooter-dark-soft-bg: #2B2112;
-            --scooter-dark-soft-text: #E6B146;
+            --scooter-heavy-icon: #FFF3C2;
+            --scooter-dark-border: #C88F1E;
+            --scooter-dark-soft-bg: #3D2E0E;
+            --scooter-dark-soft-text: #FEE494;
             --scooter-dark-soft-icon: #E6B146;
             --scooter-dark-heavy-bg: #E6B146;
-            --scooter-dark-heavy-text: #FFF;
+            --scooter-dark-heavy-text: #2B2112;
             --scooter-dark-heavy-icon: #3D2E0E;
-            /* Fozzy (Coconut) badge tokens */
+            /* Fozzy (Tangerine) badge tokens */
             --fozzy-border: #E67047;
-            --fozzy-soft-bg: #FFF2E9;
-            --fozzy-soft-text: #CE391C;
-            --fozzy-soft-icon: #CE391C;
-            --fozzy-heavy-bg: #CE391C;
+            --fozzy-soft-bg: #FFD9C2;
+            --fozzy-soft-text: #582718;
+            --fozzy-soft-icon: #822311;
+            --fozzy-heavy-bg: #A82E16;
             --fozzy-heavy-text: #FFF;
-            --fozzy-heavy-icon: #E67047;
-            --fozzy-dark-border: #3D1A12;
-            --fozzy-dark-soft-bg: #2B1611;
-            --fozzy-dark-soft-text: #E67047;
+            --fozzy-heavy-icon: #FFD9C2;
+            --fozzy-dark-border: #A82E16;
+            --fozzy-dark-soft-bg: #3D1A12;
+            --fozzy-dark-soft-text: #FEBB99;
             --fozzy-dark-soft-icon: #E67047;
             --fozzy-dark-heavy-bg: #E67047;
-            --fozzy-dark-heavy-text: #FFF;
+            --fozzy-dark-heavy-text: #2B1611;
             --fozzy-dark-heavy-icon: #3D1A12;
             /* Dr. Teeth (Plum) badge tokens */
-            --dr-teeth-border: #A078D3;
-            --dr-teeth-soft-bg: #F9F1FF;
-            --dr-teeth-soft-text: #5326A8;
+            --dr-teeth-border: #B88FE4;
+            --dr-teeth-soft-bg: #EDD9FF;
+            --dr-teeth-soft-text: #3E1F7A;
             --dr-teeth-soft-icon: #5326A8;
-            --dr-teeth-heavy-bg: #5326A8;
+            --dr-teeth-heavy-bg: #7A4FBD;
             --dr-teeth-heavy-text: #FFF;
-            --dr-teeth-heavy-icon: #A078D3;
-            --dr-teeth-dark-border: #2E1D49;
-            --dr-teeth-dark-soft-bg: #1A1325;
-            --dr-teeth-dark-soft-text: #A078D3;
-            --dr-teeth-dark-soft-icon: #A078D3;
+            --dr-teeth-heavy-icon: #EDD9FF;
+            --dr-teeth-dark-border: #7A4FBD;
+            --dr-teeth-dark-soft-bg: #2E1D49;
+            --dr-teeth-dark-soft-text: #D3AFF5;
+            --dr-teeth-dark-soft-icon: #B88FE4;
             --dr-teeth-dark-heavy-bg: #A078D3;
-            --dr-teeth-dark-heavy-text: #FFF;
+            --dr-teeth-dark-heavy-text: #1A1325;
             --dr-teeth-dark-heavy-icon: #2E1D49;
             /* Bunson (Watermelon) badge tokens */
             --bunson-border: #3CBCB7;
-            --bunson-soft-bg: #F0FFFC;
-            --bunson-soft-text: #1A7C7F;
-            --bunson-soft-icon: #1A7C7F;
-            --bunson-heavy-bg: #1A7C7F;
+            --bunson-soft-bg: #C4F5F1;
+            --bunson-soft-text: #112123;
+            --bunson-soft-icon: #155E61;
+            --bunson-heavy-bg: #2A9A96;
             --bunson-heavy-text: #FFF;
-            --bunson-heavy-icon: #3CBCB7;
-            --bunson-dark-border: #0F3D3F;
+            --bunson-heavy-icon: #C4F5F1;
+            --bunson-dark-border: #2A9A96;
             --bunson-dark-soft-bg: #112123;
-            --bunson-dark-soft-text: #3CBCB7;
+            --bunson-dark-soft-text: #8BE8DE;
             --bunson-dark-soft-icon: #3CBCB7;
             --bunson-dark-heavy-bg: #3CBCB7;
-            --bunson-dark-heavy-text: #FFF;
-            --bunson-dark-heavy-icon: #0F3D3F;
+            --bunson-dark-heavy-text: #0F3D3F;
+            --bunson-dark-heavy-icon: #112123;
             /* Miss Piggy (Raspberry) badge tokens */
             --miss-piggy-border: #DB549A;
-            --miss-piggy-soft-bg: #FFF0F6;
-            --miss-piggy-soft-text: #C2247F;
-            --miss-piggy-soft-icon: #C2247F;
-            --miss-piggy-heavy-bg: #C2247F;
+            --miss-piggy-soft-bg: #FFD4E8;
+            --miss-piggy-soft-text: #541D3B;
+            --miss-piggy-soft-icon: #76184D;
+            --miss-piggy-heavy-bg: #9C1D66;
             --miss-piggy-heavy-text: #FFF;
-            --miss-piggy-heavy-icon: #DB549A;
-            --miss-piggy-dark-border: #3D1A2E;
-            --miss-piggy-dark-soft-bg: #291321;
-            --miss-piggy-dark-soft-text: #DB549A;
+            --miss-piggy-heavy-icon: #FFD4E8;
+            --miss-piggy-dark-border: #9C1D66;
+            --miss-piggy-dark-soft-bg: #3D1A2E;
+            --miss-piggy-dark-soft-text: #FEAED2;
             --miss-piggy-dark-soft-icon: #DB549A;
             --miss-piggy-dark-heavy-bg: #DB549A;
-            --miss-piggy-dark-heavy-text: #FFF;
+            --miss-piggy-dark-heavy-text: #291321;
             --miss-piggy-dark-heavy-icon: #3D1A2E;
             /* Gonzo (Elderberry) badge tokens */
             --gonzo-border: #6A88E1;
-            --gonzo-soft-bg: #F0F0FE;
-            --gonzo-soft-text: #4444F4;
-            --gonzo-soft-icon: #4444F4;
-            --gonzo-heavy-bg: #4444F4;
+            --gonzo-soft-bg: #D4D5FD;
+            --gonzo-soft-text: #1D2854;
+            --gonzo-soft-icon: #2B2B99;
+            --gonzo-heavy-bg: #3636C2;
             --gonzo-heavy-text: #FFF;
-            --gonzo-heavy-icon: #6A88E1;
-            --gonzo-dark-border: #1A1B3D;
-            --gonzo-dark-soft-bg: #131629;
-            --gonzo-dark-soft-text: #6A88E1;
+            --gonzo-heavy-icon: #D4D5FD;
+            --gonzo-dark-border: #3636C2;
+            --gonzo-dark-soft-bg: #1A1B3D;
+            --gonzo-dark-soft-text: #8B91F4;
             --gonzo-dark-soft-icon: #6A88E1;
             --gonzo-dark-heavy-bg: #6A88E1;
-            --gonzo-dark-heavy-text: #FFF;
+            --gonzo-dark-heavy-text: #131629;
             --gonzo-dark-heavy-icon: #1A1B3D;
             /* Uncle Deadly (Slate) badge tokens */
             --uncle-deadly-border: #95A3B7;
-            --uncle-deadly-soft-bg: #F5F7FA;
-            --uncle-deadly-soft-text: #5D7089;
-            --uncle-deadly-soft-icon: #5D7089;
-            --uncle-deadly-heavy-bg: #5D7089;
+            --uncle-deadly-soft-bg: #D9E0E8;
+            --uncle-deadly-soft-text: #1F2831;
+            --uncle-deadly-soft-icon: #2D3743;
+            --uncle-deadly-heavy-bg: #4A5A6E;
             --uncle-deadly-heavy-text: #FFF;
-            --uncle-deadly-heavy-icon: #95A3B7;
-            --uncle-deadly-dark-border: #2D3743;
-            --uncle-deadly-dark-soft-bg: #141D29;
-            --uncle-deadly-dark-soft-text: #95A3B7;
+            --uncle-deadly-heavy-icon: #D9E0E8;
+            --uncle-deadly-dark-border: #7A8A9F;
+            --uncle-deadly-dark-soft-bg: #1F2831;
+            --uncle-deadly-dark-soft-text: #B3BDCB;
             --uncle-deadly-dark-soft-icon: #95A3B7;
             --uncle-deadly-dark-heavy-bg: #95A3B7;
-            --uncle-deadly-dark-heavy-text: #FFF;
-            --uncle-deadly-dark-heavy-icon: #2D3743;
+            --uncle-deadly-dark-heavy-text: #141D29;
+            --uncle-deadly-dark-heavy-icon: #1F2831;
             /* Sweetums (Coconut) badge tokens */
             --sweetums-border: #F08C44;
-            --sweetums-soft-bg: #FFF4F1;
-            --sweetums-soft-text: #98270D;
-            --sweetums-soft-icon: #98270D;
-            --sweetums-heavy-bg: #98270D;
+            --sweetums-soft-bg: #FFCFBD;
+            --sweetums-soft-text: #4A1508;
+            --sweetums-soft-icon: #7A1F0A;
+            --sweetums-heavy-bg: #D15E1A;
             --sweetums-heavy-text: #FFF;
-            --sweetums-heavy-icon: #F08C44;
-            --sweetums-dark-border: #4A1508;
-            --sweetums-dark-soft-bg: #2F0C04;
-            --sweetums-dark-soft-text: #F08C44;
+            --sweetums-heavy-icon: #FFCFBD;
+            --sweetums-dark-border: #D15E1A;
+            --sweetums-dark-soft-bg: #4A1508;
+            --sweetums-dark-soft-text: #F59E8A;
             --sweetums-dark-soft-icon: #F08C44;
             --sweetums-dark-heavy-bg: #F08C44;
-            --sweetums-dark-heavy-text: #FFF;
+            --sweetums-dark-heavy-text: #2F0C04;
             --sweetums-dark-heavy-icon: #4A1508;
             /* Sam (Blueberry) badge tokens */
             --sam-border: #769BD6;
-            --sam-soft-bg: #F0F6FF;
-            --sam-soft-text: #2D5696;
-            --sam-soft-icon: #2D5696;
+            --sam-soft-bg: #D4E7FF;
+            --sam-soft-text: #001A3D;
+            --sam-soft-icon: #1F3F6E;
             --sam-heavy-bg: #2D5696;
             --sam-heavy-text: #FFF;
-            --sam-heavy-icon: #769BD6;
-            --sam-dark-border: #001A3D;
-            --sam-dark-soft-bg: #00183D;
-            --sam-dark-soft-text: #769BD6;
+            --sam-heavy-icon: #D4E7FF;
+            --sam-dark-border: #4A75B8;
+            --sam-dark-soft-bg: #001A3D;
+            --sam-dark-soft-text: #B7D7FF;
             --sam-dark-soft-icon: #769BD6;
             --sam-dark-heavy-bg: #769BD6;
-            --sam-dark-heavy-text: #FFF;
+            --sam-dark-heavy-text: #00183D;
             --sam-dark-heavy-icon: #001A3D;
         }
         .Core-Theme--Dark {
@@ -303,13 +326,17 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <button class="toggle" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+    <div class="controls-bar">
+        <button class="toggle" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+        <label><input type="checkbox" id="borderToggle" onchange="toggleBorders(this.checked)"> Add Border</label>
+        <label><input type="checkbox" id="iconSizeToggle" onchange="toggleIconSize(this.checked)"> 32px Icon Only</label>
+    </div>
     <h1>The palette</h1>
     <div class="tabs">
-        <button class="tab active" onclick="showTab('colors')">Colors</button>
-        <button class="tab" onclick="showTab('colors26')">Colors 26</button>
-        <button class="tab" onclick="showTab('badge')">Badge</button>
-        <button class="tab" onclick="showTab('product')">Product</button>
+        <button class="tab active" onclick="showTab('colors', this)">Colors</button>
+        <button class="tab" onclick="showTab('colors26', this)">Colors 26</button>
+        <button class="tab" onclick="showTab('badge', this)">Badge</button>
+        <button class="tab" onclick="showTab('product', this)">Product</button>
     </div>
     <div id="colors" class="tab-content active">
         <div id="palette"></div>
@@ -320,101 +347,144 @@
             <div class="color-group">
                 <h2>Kermit (Lime)</h2>
                 <div class="color-item" style="background: #F6FFEE;">#F6FFEE</div>
+                <div class="color-item" style="background: #E3F9D1;">#E3F9D1</div>
                 <div class="color-item" style="background: #B9EA93;">#B9EA93</div>
+                <div class="color-item" style="background: #8FDB66;">#8FDB66</div>
                 <div class="color-item" style="background: #6DBD43;">#6DBD43</div>
+                <div class="color-item" style="background: #4FA02F;">#4FA02F</div>
                 <div class="color-item" style="background: #318019;">#318019</div>
                 <div class="color-item" style="background: #2A4C1A;">#2A4C1A</div>
-                <div class="color-item" style="background: #284919;">#284919</div>
+                <div class="color-item" style="background: #1F3814;">#1F3814</div>
                 <div class="color-item" style="background: #162313;">#162313</div>
             </div>
             <div class="color-group">
                 <h2>Animal (Apple)</h2>
                 <div class="color-item" style="background: #FFF1F0;">#FFF1F0</div>
+                <div class="color-item" style="background: #FFCDD0;">#FFCDD0</div>
                 <div class="color-item" style="background: #E76468;">#E76468</div>
                 <div class="color-item" style="background: #EA4858;">#EA4858</div>
                 <div class="color-item" style="background: #CD1829;">#CD1829</div>
+                <div class="color-item" style="background: #A01420;">#A01420</div>
+                <div class="color-item" style="background: #721018;">#721018</div>
                 <div class="color-item" style="background: #57191D;">#57191D</div>
+                <div class="color-item" style="background: #3D1417;">#3D1417</div>
                 <div class="color-item" style="background: #2A1215;">#2A1215</div>
             </div>
             <div class="color-group">
                 <h2>Scooter (Pineapple)</h2>
                 <div class="color-item" style="background: #FFFBE7;">#FFFBE7</div>
+                <div class="color-item" style="background: #FFF3C2;">#FFF3C2</div>
                 <div class="color-item" style="background: #FEE494;">#FEE494</div>
                 <div class="color-item" style="background: #E6B146;">#E6B146</div>
+                <div class="color-item" style="background: #C88F1E;">#C88F1E</div>
                 <div class="color-item" style="background: #AD5F05;">#AD5F05</div>
+                <div class="color-item" style="background: #8A4B04;">#8A4B04</div>
                 <div class="color-item" style="background: #594218;">#594218</div>
+                <div class="color-item" style="background: #3D2E0E;">#3D2E0E</div>
                 <div class="color-item" style="background: #2B2112;">#2B2112</div>
             </div>
             <div class="color-group">
-                <h2>Fozzy (Coconut)</h2>
+                <h2>Fozzy (Tangerine)</h2>
                 <div class="color-item" style="background: #FFF2E9;">#FFF2E9</div>
+                <div class="color-item" style="background: #FFD9C2;">#FFD9C2</div>
                 <div class="color-item" style="background: #FEBB99;">#FEBB99</div>
                 <div class="color-item" style="background: #E67047;">#E67047</div>
                 <div class="color-item" style="background: #CE391C;">#CE391C</div>
+                <div class="color-item" style="background: #A82E16;">#A82E16</div>
+                <div class="color-item" style="background: #822311;">#822311</div>
                 <div class="color-item" style="background: #582718;">#582718</div>
+                <div class="color-item" style="background: #3D1A12;">#3D1A12</div>
                 <div class="color-item" style="background: #2B1611;">#2B1611</div>
             </div>
             <div class="color-group">
                 <h2>Dr. Teeth (Plum)</h2>
                 <div class="color-item" style="background: #F9F1FF;">#F9F1FF</div>
+                <div class="color-item" style="background: #EDD9FF;">#EDD9FF</div>
                 <div class="color-item" style="background: #D3AFF5;">#D3AFF5</div>
+                <div class="color-item" style="background: #B88FE4;">#B88FE4</div>
                 <div class="color-item" style="background: #A078D3;">#A078D3</div>
+                <div class="color-item" style="background: #7A4FBD;">#7A4FBD</div>
                 <div class="color-item" style="background: #5326A8;">#5326A8</div>
+                <div class="color-item" style="background: #3E1F7A;">#3E1F7A</div>
                 <div class="color-item" style="background: #2E1D49;">#2E1D49</div>
                 <div class="color-item" style="background: #1A1325;">#1A1325</div>
             </div>
             <div class="color-group">
                 <h2>Bunson (Watermelon)</h2>
                 <div class="color-item" style="background: #F0FFFC;">#F0FFFC</div>
+                <div class="color-item" style="background: #C4F5F1;">#C4F5F1</div>
                 <div class="color-item" style="background: #8BE8DE;">#8BE8DE</div>
                 <div class="color-item" style="background: #3CBCB7;">#3CBCB7</div>
+                <div class="color-item" style="background: #2A9A96;">#2A9A96</div>
                 <div class="color-item" style="background: #1A7C7F;">#1A7C7F</div>
+                <div class="color-item" style="background: #155E61;">#155E61</div>
                 <div class="color-item" style="background: #174848;">#174848</div>
+                <div class="color-item" style="background: #0F3D3F;">#0F3D3F</div>
                 <div class="color-item" style="background: #112123;">#112123</div>
             </div>
             <div class="color-group">
                 <h2>Miss Piggy (Raspberry)</h2>
                 <div class="color-item" style="background: #FFF0F6;">#FFF0F6</div>
+                <div class="color-item" style="background: #FFD4E8;">#FFD4E8</div>
                 <div class="color-item" style="background: #FEAED2;">#FEAED2</div>
                 <div class="color-item" style="background: #DB549A;">#DB549A</div>
                 <div class="color-item" style="background: #C2247F;">#C2247F</div>
+                <div class="color-item" style="background: #9C1D66;">#9C1D66</div>
+                <div class="color-item" style="background: #76184D;">#76184D</div>
                 <div class="color-item" style="background: #541D3B;">#541D3B</div>
+                <div class="color-item" style="background: #3D1A2E;">#3D1A2E</div>
                 <div class="color-item" style="background: #291321;">#291321</div>
             </div>
             <div class="color-group">
                 <h2>Gonzo (Elderberry)</h2>
                 <div class="color-item" style="background: #F0F0FE;">#F0F0FE</div>
+                <div class="color-item" style="background: #D4D5FD;">#D4D5FD</div>
                 <div class="color-item" style="background: #8B91F4;">#8B91F4</div>
                 <div class="color-item" style="background: #6A88E1;">#6A88E1</div>
                 <div class="color-item" style="background: #4444F4;">#4444F4</div>
+                <div class="color-item" style="background: #3636C2;">#3636C2</div>
+                <div class="color-item" style="background: #2B2B99;">#2B2B99</div>
                 <div class="color-item" style="background: #1D2854;">#1D2854</div>
+                <div class="color-item" style="background: #1A1B3D;">#1A1B3D</div>
                 <div class="color-item" style="background: #131629;">#131629</div>
             </div>
             <div class="color-group">
                 <h2>Uncle Deadly (Slate)</h2>
                 <div class="color-item" style="background: #F5F7FA;">#F5F7FA</div>
+                <div class="color-item" style="background: #D9E0E8;">#D9E0E8</div>
                 <div class="color-item" style="background: #B3BDCB;">#B3BDCB</div>
                 <div class="color-item" style="background: #95A3B7;">#95A3B7</div>
+                <div class="color-item" style="background: #7A8A9F;">#7A8A9F</div>
                 <div class="color-item" style="background: #5D7089;">#5D7089</div>
+                <div class="color-item" style="background: #4A5A6E;">#4A5A6E</div>
                 <div class="color-item" style="background: #2D3743;">#2D3743</div>
+                <div class="color-item" style="background: #1F2831;">#1F2831</div>
                 <div class="color-item" style="background: #141D29;">#141D29</div>
             </div>
             <div class="color-group">
                 <h2>Sweetums (Coconut)</h2>
                 <div class="color-item" style="background: #FFF4F1;">#FFF4F1</div>
+                <div class="color-item" style="background: #FFCFBD;">#FFCFBD</div>
                 <div class="color-item" style="background: #F59E8A;">#F59E8A</div>
                 <div class="color-item" style="background: #F08C44;">#F08C44</div>
+                <div class="color-item" style="background: #D15E1A;">#D15E1A</div>
                 <div class="color-item" style="background: #98270D;">#98270D</div>
+                <div class="color-item" style="background: #7A1F0A;">#7A1F0A</div>
                 <div class="color-item" style="background: #683008;">#683008</div>
+                <div class="color-item" style="background: #4A1508;">#4A1508</div>
                 <div class="color-item" style="background: #2F0C04;">#2F0C04</div>
             </div>
             <div class="color-group">
                 <h2>Sam (Blueberry)</h2>
                 <div class="color-item" style="background: #F0F6FF;">#F0F6FF</div>
+                <div class="color-item" style="background: #D4E7FF;">#D4E7FF</div>
                 <div class="color-item" style="background: #B7D7FF;">#B7D7FF</div>
                 <div class="color-item" style="background: #769BD6;">#769BD6</div>
+                <div class="color-item" style="background: #4A75B8;">#4A75B8</div>
                 <div class="color-item" style="background: #2D5696;">#2D5696</div>
+                <div class="color-item" style="background: #1F3F6E;">#1F3F6E</div>
                 <div class="color-item" style="background: #003270;">#003270</div>
+                <div class="color-item" style="background: #001A3D;">#001A3D</div>
                 <div class="color-item" style="background: #00183D;">#00183D</div>
             </div>
         </div>
@@ -452,254 +522,188 @@
         <p class="rework-description">Soft and heavy color fills with optional border. Text badges with icon, icon-only circle and square.</p>
         <h4>Text badges</h4>
         <div class="badge-examples">
-            <div class="badge kermit kermit-soft"><span class="badge-label">Kermit Soft</span></div>
+            <div class="badge kermit kermit-soft no-border"><span class="badge-label">Kermit Soft</span></div>
             <div class="badge kermit kermit-heavy"><span class="badge-label">Kermit Heavy</span></div>
-            <div class="badge kermit kermit-soft no-border"><span class="badge-label">Soft no border</span></div>
-            <div class="badge kermit kermit-heavy no-border"><span class="badge-label">Heavy no border</span></div>
         </div>
         <h4>Icon only — circle</h4>
         <div class="badge-examples">
-            <div class="badge-icon kermit kermit-soft circle">✓</div>
-            <div class="badge-icon kermit kermit-heavy circle">✓</div>
             <div class="badge-icon kermit kermit-soft circle no-border">✓</div>
-            <div class="badge-icon kermit kermit-heavy circle no-border">✓</div>
+            <div class="badge-icon kermit kermit-heavy circle">✓</div>
         </div>
         <h4>Icon only — square</h4>
         <div class="badge-examples">
-            <div class="badge-icon kermit kermit-soft square">✓</div>
-            <div class="badge-icon kermit kermit-heavy square">✓</div>
             <div class="badge-icon kermit kermit-soft square no-border">✓</div>
-            <div class="badge-icon kermit kermit-heavy square no-border">✓</div>
+            <div class="badge-icon kermit kermit-heavy square">✓</div>
         </div>
         <h3>Rework — Animal (Apple)</h3>
         <p class="rework-description">Soft and heavy color fills with optional border.</p>
         <h4>Text badges</h4>
         <div class="badge-examples">
-            <div class="badge animal animal-soft"><span class="badge-label">Animal Soft</span></div>
+            <div class="badge animal animal-soft no-border"><span class="badge-label">Animal Soft</span></div>
             <div class="badge animal animal-heavy"><span class="badge-label">Animal Heavy</span></div>
-            <div class="badge animal animal-soft no-border"><span class="badge-label">Soft no border</span></div>
-            <div class="badge animal animal-heavy no-border"><span class="badge-label">Heavy no border</span></div>
         </div>
         <h4>Icon only — circle</h4>
         <div class="badge-examples">
-            <div class="badge-icon animal animal-soft circle">✕</div>
-            <div class="badge-icon animal animal-heavy circle">✕</div>
             <div class="badge-icon animal animal-soft circle no-border">✕</div>
-            <div class="badge-icon animal animal-heavy circle no-border">✕</div>
+            <div class="badge-icon animal animal-heavy circle">✕</div>
         </div>
         <h4>Icon only — square</h4>
         <div class="badge-examples">
-            <div class="badge-icon animal animal-soft square">✕</div>
-            <div class="badge-icon animal animal-heavy square">✕</div>
             <div class="badge-icon animal animal-soft square no-border">✕</div>
-            <div class="badge-icon animal animal-heavy square no-border">✕</div>
+            <div class="badge-icon animal animal-heavy square">✕</div>
         </div>
         <h3>Rework — Scooter (Pineapple)</h3>
         <p class="rework-description">Soft and heavy color fills with optional border.</p>
         <h4>Text badges</h4>
         <div class="badge-examples">
-            <div class="badge scooter scooter-soft"><span class="badge-label">Scooter Soft</span></div>
+            <div class="badge scooter scooter-soft no-border"><span class="badge-label">Scooter Soft</span></div>
             <div class="badge scooter scooter-heavy"><span class="badge-label">Scooter Heavy</span></div>
-            <div class="badge scooter scooter-soft no-border"><span class="badge-label">Soft no border</span></div>
-            <div class="badge scooter scooter-heavy no-border"><span class="badge-label">Heavy no border</span></div>
         </div>
         <h4>Icon only — circle</h4>
         <div class="badge-examples">
-            <div class="badge-icon scooter scooter-soft circle">!</div>
-            <div class="badge-icon scooter scooter-heavy circle">!</div>
             <div class="badge-icon scooter scooter-soft circle no-border">!</div>
-            <div class="badge-icon scooter scooter-heavy circle no-border">!</div>
+            <div class="badge-icon scooter scooter-heavy circle">!</div>
         </div>
         <h4>Icon only — square</h4>
         <div class="badge-examples">
-            <div class="badge-icon scooter scooter-soft square">!</div>
-            <div class="badge-icon scooter scooter-heavy square">!</div>
             <div class="badge-icon scooter scooter-soft square no-border">!</div>
-            <div class="badge-icon scooter scooter-heavy square no-border">!</div>
+            <div class="badge-icon scooter scooter-heavy square">!</div>
         </div>
         <h3>Rework — Fozzy (Coconut)</h3>
         <p class="rework-description">Soft and heavy color fills with optional border.</p>
         <h4>Text badges</h4>
         <div class="badge-examples">
-            <div class="badge fozzy fozzy-soft"><span class="badge-label">Fozzy Soft</span></div>
+            <div class="badge fozzy fozzy-soft no-border"><span class="badge-label">Fozzy Soft</span></div>
             <div class="badge fozzy fozzy-heavy"><span class="badge-label">Fozzy Heavy</span></div>
-            <div class="badge fozzy fozzy-soft no-border"><span class="badge-label">Soft no border</span></div>
-            <div class="badge fozzy fozzy-heavy no-border"><span class="badge-label">Heavy no border</span></div>
         </div>
         <h4>Icon only — circle</h4>
         <div class="badge-examples">
-            <div class="badge-icon fozzy fozzy-soft circle">◆</div>
-            <div class="badge-icon fozzy fozzy-heavy circle">◆</div>
             <div class="badge-icon fozzy fozzy-soft circle no-border">◆</div>
-            <div class="badge-icon fozzy fozzy-heavy circle no-border">◆</div>
+            <div class="badge-icon fozzy fozzy-heavy circle">◆</div>
         </div>
         <h4>Icon only — square</h4>
         <div class="badge-examples">
-            <div class="badge-icon fozzy fozzy-soft square">◆</div>
-            <div class="badge-icon fozzy fozzy-heavy square">◆</div>
             <div class="badge-icon fozzy fozzy-soft square no-border">◆</div>
-            <div class="badge-icon fozzy fozzy-heavy square no-border">◆</div>
+            <div class="badge-icon fozzy fozzy-heavy square">◆</div>
         </div>
         <h3>Rework — Dr. Teeth (Plum)</h3>
         <p class="rework-description">Soft and heavy color fills with optional border.</p>
         <h4>Text badges</h4>
         <div class="badge-examples">
-            <div class="badge dr-teeth dr-teeth-soft"><span class="badge-label">Dr. Teeth Soft</span></div>
+            <div class="badge dr-teeth dr-teeth-soft no-border"><span class="badge-label">Dr. Teeth Soft</span></div>
             <div class="badge dr-teeth dr-teeth-heavy"><span class="badge-label">Dr. Teeth Heavy</span></div>
-            <div class="badge dr-teeth dr-teeth-soft no-border"><span class="badge-label">Soft no border</span></div>
-            <div class="badge dr-teeth dr-teeth-heavy no-border"><span class="badge-label">Heavy no border</span></div>
         </div>
         <h4>Icon only — circle</h4>
         <div class="badge-examples">
-            <div class="badge-icon dr-teeth dr-teeth-soft circle">i</div>
-            <div class="badge-icon dr-teeth dr-teeth-heavy circle">i</div>
             <div class="badge-icon dr-teeth dr-teeth-soft circle no-border">i</div>
-            <div class="badge-icon dr-teeth dr-teeth-heavy circle no-border">i</div>
+            <div class="badge-icon dr-teeth dr-teeth-heavy circle">i</div>
         </div>
         <h4>Icon only — square</h4>
         <div class="badge-examples">
-            <div class="badge-icon dr-teeth dr-teeth-soft square">i</div>
-            <div class="badge-icon dr-teeth dr-teeth-heavy square">i</div>
             <div class="badge-icon dr-teeth dr-teeth-soft square no-border">i</div>
-            <div class="badge-icon dr-teeth dr-teeth-heavy square no-border">i</div>
+            <div class="badge-icon dr-teeth dr-teeth-heavy square">i</div>
         </div>
         <h3>Rework — Bunson (Watermelon)</h3>
         <p class="rework-description">Soft and heavy color fills with optional border.</p>
         <h4>Text badges</h4>
         <div class="badge-examples">
-            <div class="badge bunson bunson-soft"><span class="badge-label">Bunson Soft</span></div>
+            <div class="badge bunson bunson-soft no-border"><span class="badge-label">Bunson Soft</span></div>
             <div class="badge bunson bunson-heavy"><span class="badge-label">Bunson Heavy</span></div>
-            <div class="badge bunson bunson-soft no-border"><span class="badge-label">Soft no border</span></div>
-            <div class="badge bunson bunson-heavy no-border"><span class="badge-label">Heavy no border</span></div>
         </div>
         <h4>Icon only — circle</h4>
         <div class="badge-examples">
-            <div class="badge-icon bunson bunson-soft circle">~</div>
-            <div class="badge-icon bunson bunson-heavy circle">~</div>
             <div class="badge-icon bunson bunson-soft circle no-border">~</div>
-            <div class="badge-icon bunson bunson-heavy circle no-border">~</div>
+            <div class="badge-icon bunson bunson-heavy circle">~</div>
         </div>
         <h4>Icon only — square</h4>
         <div class="badge-examples">
-            <div class="badge-icon bunson bunson-soft square">~</div>
-            <div class="badge-icon bunson bunson-heavy square">~</div>
             <div class="badge-icon bunson bunson-soft square no-border">~</div>
-            <div class="badge-icon bunson bunson-heavy square no-border">~</div>
+            <div class="badge-icon bunson bunson-heavy square">~</div>
         </div>
         <h3>Rework — Miss Piggy (Raspberry)</h3>
         <p class="rework-description">Soft and heavy color fills with optional border.</p>
         <h4>Text badges</h4>
         <div class="badge-examples">
-            <div class="badge miss-piggy miss-piggy-soft"><span class="badge-label">Miss Piggy Soft</span></div>
+            <div class="badge miss-piggy miss-piggy-soft no-border"><span class="badge-label">Miss Piggy Soft</span></div>
             <div class="badge miss-piggy miss-piggy-heavy"><span class="badge-label">Miss Piggy Heavy</span></div>
-            <div class="badge miss-piggy miss-piggy-soft no-border"><span class="badge-label">Soft no border</span></div>
-            <div class="badge miss-piggy miss-piggy-heavy no-border"><span class="badge-label">Heavy no border</span></div>
         </div>
         <h4>Icon only — circle</h4>
         <div class="badge-examples">
-            <div class="badge-icon miss-piggy miss-piggy-soft circle">♥</div>
-            <div class="badge-icon miss-piggy miss-piggy-heavy circle">♥</div>
             <div class="badge-icon miss-piggy miss-piggy-soft circle no-border">♥</div>
-            <div class="badge-icon miss-piggy miss-piggy-heavy circle no-border">♥</div>
+            <div class="badge-icon miss-piggy miss-piggy-heavy circle">♥</div>
         </div>
         <h4>Icon only — square</h4>
         <div class="badge-examples">
-            <div class="badge-icon miss-piggy miss-piggy-soft square">♥</div>
-            <div class="badge-icon miss-piggy miss-piggy-heavy square">♥</div>
             <div class="badge-icon miss-piggy miss-piggy-soft square no-border">♥</div>
-            <div class="badge-icon miss-piggy miss-piggy-heavy square no-border">♥</div>
+            <div class="badge-icon miss-piggy miss-piggy-heavy square">♥</div>
         </div>
         <h3>Rework — Gonzo (Elderberry)</h3>
         <p class="rework-description">Soft and heavy color fills with optional border.</p>
         <h4>Text badges</h4>
         <div class="badge-examples">
-            <div class="badge gonzo gonzo-soft"><span class="badge-label">Gonzo Soft</span></div>
+            <div class="badge gonzo gonzo-soft no-border"><span class="badge-label">Gonzo Soft</span></div>
             <div class="badge gonzo gonzo-heavy"><span class="badge-label">Gonzo Heavy</span></div>
-            <div class="badge gonzo gonzo-soft no-border"><span class="badge-label">Soft no border</span></div>
-            <div class="badge gonzo gonzo-heavy no-border"><span class="badge-label">Heavy no border</span></div>
         </div>
         <h4>Icon only — circle</h4>
         <div class="badge-examples">
-            <div class="badge-icon gonzo gonzo-soft circle">★</div>
-            <div class="badge-icon gonzo gonzo-heavy circle">★</div>
             <div class="badge-icon gonzo gonzo-soft circle no-border">★</div>
-            <div class="badge-icon gonzo gonzo-heavy circle no-border">★</div>
+            <div class="badge-icon gonzo gonzo-heavy circle">★</div>
         </div>
         <h4>Icon only — square</h4>
         <div class="badge-examples">
-            <div class="badge-icon gonzo gonzo-soft square">★</div>
-            <div class="badge-icon gonzo gonzo-heavy square">★</div>
             <div class="badge-icon gonzo gonzo-soft square no-border">★</div>
-            <div class="badge-icon gonzo gonzo-heavy square no-border">★</div>
+            <div class="badge-icon gonzo gonzo-heavy square">★</div>
         </div>
         <h3>Rework — Uncle Deadly (Slate)</h3>
         <p class="rework-description">Soft and heavy color fills with optional border.</p>
         <h4>Text badges</h4>
         <div class="badge-examples">
-            <div class="badge uncle-deadly uncle-deadly-soft"><span class="badge-label">Uncle Deadly Soft</span></div>
+            <div class="badge uncle-deadly uncle-deadly-soft no-border"><span class="badge-label">Uncle Deadly Soft</span></div>
             <div class="badge uncle-deadly uncle-deadly-heavy"><span class="badge-label">Uncle Deadly Heavy</span></div>
-            <div class="badge uncle-deadly uncle-deadly-soft no-border"><span class="badge-label">Soft no border</span></div>
-            <div class="badge uncle-deadly uncle-deadly-heavy no-border"><span class="badge-label">Heavy no border</span></div>
         </div>
         <h4>Icon only — circle</h4>
         <div class="badge-examples">
-            <div class="badge-icon uncle-deadly uncle-deadly-soft circle">●</div>
-            <div class="badge-icon uncle-deadly uncle-deadly-heavy circle">●</div>
             <div class="badge-icon uncle-deadly uncle-deadly-soft circle no-border">●</div>
-            <div class="badge-icon uncle-deadly uncle-deadly-heavy circle no-border">●</div>
+            <div class="badge-icon uncle-deadly uncle-deadly-heavy circle">●</div>
         </div>
         <h4>Icon only — square</h4>
         <div class="badge-examples">
-            <div class="badge-icon uncle-deadly uncle-deadly-soft square">●</div>
-            <div class="badge-icon uncle-deadly uncle-deadly-heavy square">●</div>
             <div class="badge-icon uncle-deadly uncle-deadly-soft square no-border">●</div>
-            <div class="badge-icon uncle-deadly uncle-deadly-heavy square no-border">●</div>
+            <div class="badge-icon uncle-deadly uncle-deadly-heavy square">●</div>
         </div>
         <h3>Rework — Sweetums (Coconut)</h3>
         <p class="rework-description">Soft and heavy color fills with optional border.</p>
         <h4>Text badges</h4>
         <div class="badge-examples">
-            <div class="badge sweetums sweetums-soft"><span class="badge-label">Sweetums Soft</span></div>
+            <div class="badge sweetums sweetums-soft no-border"><span class="badge-label">Sweetums Soft</span></div>
             <div class="badge sweetums sweetums-heavy"><span class="badge-label">Sweetums Heavy</span></div>
-            <div class="badge sweetums sweetums-soft no-border"><span class="badge-label">Soft no border</span></div>
-            <div class="badge sweetums sweetums-heavy no-border"><span class="badge-label">Heavy no border</span></div>
         </div>
         <h4>Icon only — circle</h4>
         <div class="badge-examples">
-            <div class="badge-icon sweetums sweetums-soft circle">◆</div>
-            <div class="badge-icon sweetums sweetums-heavy circle">◆</div>
             <div class="badge-icon sweetums sweetums-soft circle no-border">◆</div>
-            <div class="badge-icon sweetums sweetums-heavy circle no-border">◆</div>
+            <div class="badge-icon sweetums sweetums-heavy circle">◆</div>
         </div>
         <h4>Icon only — square</h4>
         <div class="badge-examples">
-            <div class="badge-icon sweetums sweetums-soft square">◆</div>
-            <div class="badge-icon sweetums sweetums-heavy square">◆</div>
             <div class="badge-icon sweetums sweetums-soft square no-border">◆</div>
-            <div class="badge-icon sweetums sweetums-heavy square no-border">◆</div>
+            <div class="badge-icon sweetums sweetums-heavy square">◆</div>
         </div>
         <h3>Rework — Sam (Blueberry)</h3>
         <p class="rework-description">Soft and heavy color fills with optional border.</p>
         <h4>Text badges</h4>
         <div class="badge-examples">
-            <div class="badge sam sam-soft"><span class="badge-label">Sam Soft</span></div>
+            <div class="badge sam sam-soft no-border"><span class="badge-label">Sam Soft</span></div>
             <div class="badge sam sam-heavy"><span class="badge-label">Sam Heavy</span></div>
-            <div class="badge sam sam-soft no-border"><span class="badge-label">Soft no border</span></div>
-            <div class="badge sam sam-heavy no-border"><span class="badge-label">Heavy no border</span></div>
         </div>
         <h4>Icon only — circle</h4>
         <div class="badge-examples">
-            <div class="badge-icon sam sam-soft circle">◉</div>
-            <div class="badge-icon sam sam-heavy circle">◉</div>
             <div class="badge-icon sam sam-soft circle no-border">◉</div>
-            <div class="badge-icon sam sam-heavy circle no-border">◉</div>
+            <div class="badge-icon sam sam-heavy circle">◉</div>
         </div>
         <h4>Icon only — square</h4>
         <div class="badge-examples">
-            <div class="badge-icon sam sam-soft square">◉</div>
-            <div class="badge-icon sam sam-heavy square">◉</div>
             <div class="badge-icon sam sam-soft square no-border">◉</div>
-            <div class="badge-icon sam sam-heavy square no-border">◉</div>
+            <div class="badge-icon sam sam-heavy square">◉</div>
         </div>
     </div>
     <div id="product" class="tab-content">
@@ -801,6 +805,20 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <h2 style="margin-top: 40px;">Category List</h2>
+        <div class="category-list">
+            <div class="category-row"><div class="badge-icon kermit kermit-heavy square">✓</div><span>Active Orders</span><span class="chevron">›</span></div>
+            <div class="category-row"><div class="badge-icon animal animal-heavy square">✕</div><span>Failed Jobs</span><span class="chevron">›</span></div>
+            <div class="category-row"><div class="badge-icon scooter scooter-heavy square">!</div><span>Pending Review</span><span class="chevron">›</span></div>
+            <div class="category-row"><div class="badge-icon fozzy fozzy-heavy square">◆</div><span>Deployments</span><span class="chevron">›</span></div>
+            <div class="category-row"><div class="badge-icon dr-teeth dr-teeth-heavy square">i</div><span>In Progress</span><span class="chevron">›</span></div>
+            <div class="category-row"><div class="badge-icon bunson bunson-heavy square">~</div><span>Deployed</span><span class="chevron">›</span></div>
+            <div class="category-row"><div class="badge-icon miss-piggy miss-piggy-heavy square">♥</div><span>On Hold</span><span class="chevron">›</span></div>
+            <div class="category-row"><div class="badge-icon gonzo gonzo-heavy square">★</div><span>Report Engine</span><span class="chevron">›</span></div>
+            <div class="category-row"><div class="badge-icon uncle-deadly uncle-deadly-heavy square">●</div><span>Other</span><span class="chevron">›</span></div>
+            <div class="category-row"><div class="badge-icon sweetums sweetums-heavy square">◆</div><span>Auth Module</span><span class="chevron">›</span></div>
+            <div class="category-row"><div class="badge-icon sam sam-heavy square">◉</div><span>API Gateway</span><span class="chevron">›</span></div>
         </div>
     </div>
 
@@ -955,13 +973,34 @@
         html += '</div>';
         palette.innerHTML = html;
 
-        function showTab(tabName) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+        function showTab(tabName, el) {
+            document.querySelectorAll('.tab-content').forEach(e => e.classList.remove('active'));
+            document.querySelectorAll('.tab').forEach(e => e.classList.remove('active'));
             document.getElementById(tabName).classList.add('active');
-            event.target.classList.add('active');
+            el.classList.add('active');
         }
         window.showTab = showTab;
+
+        function toggleIconSize(checked) {
+            document.querySelectorAll('.badge-icon').forEach(el => {
+                el.style.width = checked ? '32px' : '';
+                el.style.height = checked ? '32px' : '';
+                el.style.fontSize = checked ? '16px' : '';
+            });
+        }
+        window.toggleIconSize = toggleIconSize;
+
+        function toggleBorders(checked) {
+            const softBadges = document.querySelectorAll('.badge-icon[class*="-soft"], .badge[class*="-soft"]');
+            softBadges.forEach(badge => {
+                if (checked) {
+                    badge.classList.remove('no-border');
+                } else {
+                    badge.classList.add('no-border');
+                }
+            });
+        }
+        window.toggleBorders = toggleBorders;
 
         function toggleTheme() {
             const html = document.documentElement;
