@@ -1,0 +1,53 @@
+<div
+    class="Core-Badge"
+    [class.Core-Badge-color--Lime]="color() === 'Lime'"
+    [class.Core-Badge-color--Pineapple]="color() === 'Pineapple'"
+    [class.Core-Badge-color--Tangerine]="color() === 'Tangerine'"
+    [class.Core-Badge-color--Apple]="color() === 'Apple'"
+    [class.Core-Badge-color--Plum]="color() === 'Plum'"
+    [class.Core-Badge-color--Watermelon]="color() === 'Watermelon'"
+    [class.Core-Badge-color--Coconut]="color() === 'Coconut'"
+    [class.Core-Badge-color--Raspberry]="color() === 'Raspberry'"
+    [class.Core-Badge-color--Slate]="color() === 'Slate'"
+    [class.Core-Badge-color--Elderberry]="color() === 'Elderberry'"
+    [class.Core-Badge-color--Blueberry]="color() === 'Blueberry'"
+    [class.Core-Badge-color--AI]="color() === 'AI'"
+    [class.is-border]="border()"
+    [class.is-bold]="bold()"
+    [class.has-icon]="hasIcon()"
+    [class.is-icon-status]="iconStatus()"
+    [class.is-icon-indicator]="iconIndicator()"
+    [class.is-text-simple]="textSimple()"
+>
+    <div
+        #badgeLabel
+        class="Core-Badge-label"
+        [class.is-small]="size() === 'small'"
+        [class.is-medium]="size() === 'medium'"
+        [class.is-large]="size() === 'large'"
+    >
+        <ng-content></ng-content>
+    </div>
+
+    @if (subMessage()) {
+        <div
+            class="Core-Badge-SubMessage"
+            [class.Core-Badge-color--Lime]="color() === 'Lime'"
+            [class.Core-Badge-color--Pineapple]="color() === 'Pineapple'"
+            [class.Core-Badge-color--Tangerine]="color() === 'Tangerine'"
+            [class.Core-Badge-color--Apple]="color() === 'Apple'"
+            [class.Core-Badge-color--Plum]="color() === 'Plum'"
+            [class.Core-Badge-color--Watermelon]="color() === 'Watermelon'"
+            [class.Core-Badge-color--Coconut]="color() === 'Coconut'"
+            [class.Core-Badge-color--Raspberry]="color() === 'Raspberry'"
+            [class.Core-Badge-color--Slate]="color() === 'Slate'"
+            [class.Core-Badge-color--Elderberry]="color() === 'Elderberry'"
+            [class.Core-Badge-color--Blueberry]="color() === 'Blueberry'"
+            [class.Core-Badge-color--AI]="color() === 'AI'"
+        >
+            <div class="Core-Badge-SubMessage-text">
+                <ng-container *ngTemplateOutlet="subMessage()"></ng-container>
+            </div>
+        </div>
+    }
+</div>

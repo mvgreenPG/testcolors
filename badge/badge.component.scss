@@ -1,0 +1,351 @@
+@use '../../assets/styles/cui' as *;
+
+@mixin icon-style {
+    display: inline-flex;
+    align-self: center;
+    line-height: normal;
+    transform: scale(1.25);
+}
+
+@mixin badge-color(
+    $colorName,
+    $mainColor,
+    $textColor,
+    $dotColor,
+    $borderColor,
+    $iconStatusBg,
+    $iconStatusIcon
+) {
+    &.Core-Badge-color--#{$colorName} {
+        color: $textColor;
+
+        .Core-Badge-label {
+            border: rem-calc(1) solid $mainColor;
+            background: $mainColor;
+            border-radius: rem-calc(6);
+
+            &::before {
+                display: inline-block;
+                content: '';
+                border-radius: rem-calc(8);
+                height: rem-calc(8);
+                width: rem-calc(8);
+                margin-right: rem-calc(6);
+                background-color: $dotColor;
+            }
+        }
+
+        &.is-border {
+            color: $textColor;
+
+            .Core-Badge-label {
+                background-color: $mainColor;
+                border: rem-calc(1) solid $borderColor;
+                border-radius: rem-calc(6);
+            }
+        }
+
+        &.is-bold {
+            .Core-Badge-label {
+                @include fontWeightBold;
+            }
+        }
+
+        &.has-icon {
+            .Core-Icon {
+                @include icon-style;
+
+                color: $dotColor;
+            }
+
+            .Core-Badge-label {
+                gap: rem-calc(6);
+
+                &::before {
+                    display: none;
+                }
+            }
+        }
+
+        &.is-icon-status {
+            .Core-Icon {
+                @include icon-style;
+
+                color: $iconStatusIcon;
+            }
+
+            .Core-Badge-label {
+                display: flex;
+                justify-content: center;
+                border-radius: rem-calc(20);
+                width: rem-calc(20);
+                height: rem-calc(20);
+                background: $iconStatusBg;
+                border: rem-calc(1) solid $iconStatusBg;
+
+                &::before {
+                    display: none;
+                }
+
+                &.is-small {
+                    transform: scale(1);
+                }
+
+                &.is-medium {
+                    transform: scale(1.4);
+                }
+
+                &.is-large {
+                    transform: scale(2);
+                }
+            }
+        }
+
+        &.is-icon-indicator {
+            .Core-Badge-label {
+                background: none;
+                border: none;
+
+                .Core-Icon--circle,
+                .Core-Icon--radio {
+                    transform: scale(0.9);
+                }
+            }
+        }
+
+        &.is-text-simple {
+            .Core-Badge-label {
+                border: none;
+
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@mixin badge-sub-message($colorName, $color, $textColor) {
+    &.Core-Badge-color--#{$colorName} {
+        background-color: $color;
+        color: $textColor;
+    }
+}
+
+.Core-Badge {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: $spacing-4;
+
+    .Core-Badge-label {
+        box-sizing: border-box;
+        height: rem-calc(20);
+        display: flex;
+        align-items: center;
+        padding: 0 $spacing-8;
+        font-size: 0.8rem;
+        line-height: normal;
+        letter-spacing: rem-calc(0.3);
+        white-space: nowrap;
+        @include fontWeightRegular;
+    }
+    @include badge-color(
+        'Lime',
+        var(--coreui-status-success-background),
+        var(--coreui-status-text-primary),
+        var(--coreui-status-success-icon),
+        var(--coreui-status-success-border),
+        var(--coreui-status-success-icon-background),
+        var(--coreui-status-success-fill)
+    );
+    @include badge-color(
+        'AI',
+        linear-gradient(
+            180deg,
+            var(--coreui-ai-gradient-primary-start) 0%,
+            var(--coreui-ai-gradient-primary-end) 100%
+        ),
+        var(--coreui-button-primary-text),
+        var(--coreui-button-primary-icon),
+        transparent,
+        linear-gradient(
+            180deg,
+            var(--coreui-ai-gradient-primary-start) 0%,
+            var(--coreui-ai-gradient-primary-end) 100%
+        ),
+        var(--coreui-button-primary-icon)
+    );
+    @include badge-color(
+        'Pineapple',
+        var(--coreui-status-warn-background),
+        var(--coreui-status-text-primary),
+        var(--coreui-status-warn-icon),
+        var(--coreui-status-warn-border),
+        var(--coreui-status-warn-icon-background),
+        var(--coreui-status-warn-fill)
+    );
+    @include badge-color(
+        'Tangerine',
+        var(--coreui-supportive-tangerine-background),
+        var(--coreui-status-text-primary),
+        var(--coreui-supportive-tangerine-icon),
+        var(--coreui-supportive-tangerine-border),
+        var(--coreui-supportive-tangerine-icon-background),
+        var(--coreui-supportive-tangerine-fill)
+    );
+    @include badge-color(
+        'Apple',
+        var(--coreui-status-error-background),
+        var(--coreui-status-text-primary),
+        var(--coreui-status-error-icon),
+        var(--coreui-status-error-border),
+        var(--coreui-status-error-icon-background),
+        var(--coreui-status-error-fill)
+    );
+    @include badge-color(
+        'Plum',
+        var(--coreui-status-info-background),
+        var(--coreui-status-text-primary),
+        var(--coreui-status-info-icon),
+        var(--coreui-status-info-border),
+        var(--coreui-status-info-icon-background),
+        var(--coreui-status-info-fill)
+    );
+    @include badge-color(
+        'Watermelon',
+        var(--coreui-supportive-watermelon-background),
+        var(--coreui-status-text-primary),
+        var(--coreui-supportive-watermelon-icon),
+        var(--coreui-supportive-watermelon-border),
+        var(--coreui-supportive-watermelon-icon-background),
+        var(--coreui-supportive-watermelon-fill)
+    );
+    @include badge-color(
+        'Coconut',
+        var(--coreui-supportive-coconut-background),
+        var(--coreui-status-text-primary),
+        var(--coreui-supportive-coconut-icon),
+        var(--coreui-supportive-coconut-border),
+        var(--coreui-supportive-coconut-icon-background),
+        var(--coreui-supportive-coconut-fill)
+    );
+    @include badge-color(
+        'Raspberry',
+        var(--coreui-supportive-raspberry-background),
+        var(--coreui-status-text-primary),
+        var(--coreui-supportive-raspberry-icon),
+        var(--coreui-supportive-raspberry-border),
+        var(--coreui-supportive-raspberry-icon-background),
+        var(--coreui-supportive-raspberry-fill)
+    );
+    @include badge-color(
+        'Slate',
+        var(--coreui-status-neutral-background),
+        var(--coreui-status-text-primary),
+        var(--coreui-status-neutral-icon),
+        var(--coreui-status-neutral-border),
+        var(--coreui-status-neutral-icon-background),
+        var(--coreui-status-neutral-fill)
+    );
+    @include badge-color(
+        'Elderberry',
+        var(--coreui-supportive-elderberry-background),
+        var(--coreui-status-text-primary),
+        var(--coreui-supportive-elderberry-icon),
+        var(--coreui-supportive-elderberry-border),
+        var(--coreui-supportive-elderberry-icon-background),
+        var(--coreui-supportive-elderberry-fill)
+    );
+    @include badge-color(
+        'Blueberry',
+        var(--coreui-supportive-blueberry-background),
+        var(--coreui-status-text-primary),
+        var(--coreui-supportive-blueberry-icon),
+        var(--coreui-supportive-blueberry-border),
+        var(--coreui-supportive-blueberry-icon-background),
+        var(--coreui-supportive-blueberry-fill)
+    );
+}
+
+.Core-Badge-SubMessage {
+    position: relative;
+    min-height: rem-calc(20);
+    display: flex;
+    align-items: center;
+    border-radius: rem-calc(6);
+
+    .Core-Badge-SubMessage-text {
+        display: inline;
+        @include fontSizeXXSmall;
+        @include fontWeightRegular;
+
+        padding: $spacing-4 $spacing-8;
+
+        a {
+            @include fontSizeXXSmall;
+
+            color: inherit;
+        }
+
+        button {
+            background: none;
+            border: none;
+            color: inherit;
+            text-decoration: underline;
+            cursor: pointer;
+            padding: 0;
+
+            &:focus {
+                border-radius: rem-calc(4);
+                @include focus;
+            }
+        }
+    }
+
+    @include badge-sub-message(
+        'Apple',
+        var(--coreui-status-error-background),
+        var(--coreui-status-text-primary)
+    );
+    @include badge-sub-message(
+        'Coconut',
+        var(--coreui-supportive-coconut-background),
+        var(--coreui-status-text-primary)
+    );
+    @include badge-sub-message(
+        'Lime',
+        var(--coreui-status-success-background),
+        var(--coreui-status-text-primary)
+    );
+    @include badge-sub-message(
+        'Pineapple',
+        var(--coreui-status-warn-background),
+        var(--coreui-status-text-primary)
+    );
+    @include badge-sub-message(
+        'Plum',
+        var(--coreui-status-info-background),
+        var(--coreui-status-text-primary)
+    );
+    @include badge-sub-message(
+        'Raspberry',
+        var(--coreui-supportive-raspberry-background),
+        var(--coreui-status-text-primary)
+    );
+    @include badge-sub-message(
+        'Slate',
+        var(--coreui-status-neutral-background),
+        var(--coreui-status-text-primary)
+    );
+    @include badge-sub-message(
+        'Tangerine',
+        var(--coreui-supportive-tangerine-background),
+        var(--coreui-status-text-primary)
+    );
+    @include badge-sub-message(
+        'Watermelon',
+        var(--coreui-supportive-watermelon-background),
+        var(--coreui-status-text-primary)
+    );
+}

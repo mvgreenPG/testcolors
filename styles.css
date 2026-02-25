@@ -1,0 +1,619 @@
+body {
+  font-family: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+  padding: 40px;
+  transition: background 0.3s, color 0.3s;
+  background: #f5f5f5;
+  color: #000;
+}
+body.dark {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+h1 {
+  margin-bottom: 40px;
+  font-size: 32px;
+}
+
+.toggle {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 80px;
+  width: 75px;
+  height: 30px;
+  background: #fff;
+  border: 2px solid #333;
+  border-radius: 15px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s;
+  font-size: 10px;
+  font-weight: bold;
+  color: #333;
+}
+.toggle::before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #333;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s;
+  z-index: 1;
+}
+.toggle::after {
+  content: "LIGHT";
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 1;
+}
+body.dark .toggle {
+  background: #333;
+  border-color: #fff;
+  color: #fff;
+}
+body.dark .toggle::before {
+  background: #fff;
+  transform: translateX(45px);
+}
+body.dark .toggle::after {
+  content: "DARK";
+  left: 8px;
+  right: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.grid-colors26 {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+.color-group h2 {
+  font-size: 18px;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.color-item {
+  padding: 16px;
+  font-size: 14px;
+  color: #000;
+}
+
+/* Colors 26: last 3–4 swatches are dark (lightest-to-darkest order)—use light text */
+.grid-colors26 .color-group .color-item:nth-child(4),
+.grid-colors26 .color-group .color-item:nth-child(5),
+.grid-colors26 .color-group .color-item:nth-child(6),
+.grid-colors26 .color-group .color-item:nth-child(7) {
+  color: #fff;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.tab {
+  padding: 8px 16px;
+  border: none;
+  background: #ddd;
+  color: #000;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.tab.active {
+  background: #333;
+  color: #fff;
+}
+body.dark .tab {
+  background: #444;
+  color: #fff;
+}
+body.dark .tab.active {
+  background: #fff;
+  color: #000;
+}
+
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+}
+
+.badge-examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  row-gap: 24px;
+  margin-bottom: 24px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+}
+.badge .badge-label {
+  height: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 6px;
+  border: 1px solid;
+}
+.badge .badge-label::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  margin-right: 6px;
+}
+.badge.lime .badge-label {
+  background: var(--coreui-status-success-background);
+  border-color: var(--coreui-status-success-border);
+  color: var(--coreui-status-text-primary);
+}
+.badge.lime .badge-label::before {
+  background: var(--coreui-status-success-icon);
+}
+.badge.pineapple .badge-label {
+  background: var(--coreui-status-warn-background);
+  border-color: var(--coreui-status-warn-border);
+  color: var(--coreui-status-text-primary);
+}
+.badge.pineapple .badge-label::before {
+  background: var(--coreui-status-warn-icon);
+}
+.badge.tangerine .badge-label {
+  background: var(--coreui-supportive-tangerine-background);
+  border-color: var(--coreui-supportive-tangerine-border);
+  color: var(--coreui-status-text-primary);
+}
+.badge.tangerine .badge-label::before {
+  background: var(--coreui-supportive-tangerine-icon);
+}
+.badge.apple .badge-label {
+  background: var(--coreui-status-error-background);
+  border-color: var(--coreui-status-error-border);
+  color: var(--coreui-status-text-primary);
+}
+.badge.apple .badge-label::before {
+  background: var(--coreui-status-error-icon);
+}
+.badge.plum .badge-label {
+  background: var(--coreui-status-info-background);
+  border-color: var(--coreui-status-info-border);
+  color: var(--coreui-status-text-primary);
+}
+.badge.plum .badge-label::before {
+  background: var(--coreui-status-info-icon);
+}
+.badge.watermelon .badge-label {
+  background: var(--coreui-supportive-watermelon-background);
+  border-color: var(--coreui-supportive-watermelon-border);
+  color: var(--coreui-status-text-primary);
+}
+.badge.watermelon .badge-label::before {
+  background: var(--coreui-supportive-watermelon-icon);
+}
+.badge.coconut .badge-label {
+  background: var(--coreui-supportive-coconut-background);
+  border-color: var(--coreui-supportive-coconut-border);
+  color: var(--coreui-status-text-primary);
+}
+.badge.coconut .badge-label::before {
+  background: var(--coreui-supportive-coconut-icon);
+}
+.badge.raspberry .badge-label {
+  background: var(--coreui-supportive-raspberry-background);
+  border-color: var(--coreui-supportive-raspberry-border);
+  color: var(--coreui-status-text-primary);
+}
+.badge.raspberry .badge-label::before {
+  background: var(--coreui-supportive-raspberry-icon);
+}
+.badge.slate .badge-label {
+  background: var(--coreui-status-neutral-background);
+  border-color: var(--coreui-status-neutral-border);
+  color: var(--coreui-status-text-primary);
+}
+.badge.slate .badge-label::before {
+  background: var(--coreui-status-neutral-icon);
+}
+.badge.elderberry .badge-label {
+  background: var(--coreui-supportive-elderberry-background);
+  border-color: var(--coreui-supportive-elderberry-border);
+  color: var(--coreui-status-text-primary);
+}
+.badge.elderberry .badge-label::before {
+  background: var(--coreui-supportive-elderberry-icon);
+}
+.badge.blueberry .badge-label {
+  background: var(--coreui-supportive-blueberry-background);
+  border-color: var(--coreui-supportive-blueberry-border);
+  color: var(--coreui-status-text-primary);
+}
+.badge.blueberry .badge-label::before {
+  background: var(--coreui-supportive-blueberry-icon);
+}
+
+/* Rework — Kermit badge variants (from new-colors.md) */
+.badge.kermit.kermit-soft .badge-label {
+  background: var(--kermit-soft-bg);
+  border: 1px solid var(--kermit-border);
+  color: var(--kermit-soft-text);
+}
+.badge.kermit.kermit-soft .badge-label::before {
+  background: var(--kermit-soft-icon);
+}
+.badge.kermit.kermit-soft.no-border .badge-label {
+  border-color: transparent;
+}
+
+.badge.kermit.kermit-heavy .badge-label {
+  background: var(--kermit-heavy-bg);
+  border: 1px solid var(--kermit-border);
+  color: var(--kermit-heavy-text);
+}
+.badge.kermit.kermit-heavy .badge-label::before {
+  background: var(--kermit-heavy-icon);
+}
+.badge.kermit.kermit-heavy.no-border .badge-label {
+  border-color: transparent;
+}
+
+/* Kermit icon badges — circle (default) and square */
+.badge-icon.kermit.kermit-soft {
+  background: var(--kermit-soft-bg);
+  border: 1px solid var(--kermit-border);
+  color: var(--kermit-soft-icon);
+  border-radius: 50%;
+}
+.badge-icon.kermit.kermit-soft.no-border {
+  border-color: transparent;
+}
+
+.badge-icon.kermit.kermit-heavy {
+  background: var(--kermit-heavy-bg);
+  border: 1px solid var(--kermit-border);
+  color: var(--kermit-heavy-icon);
+  border-radius: 50%;
+}
+.badge-icon.kermit.kermit-heavy.no-border {
+  border-color: transparent;
+}
+
+.badge-icon.kermit.square {
+  border-radius: 4px;
+}
+
+/* Rework — Animal badge variants */
+.badge.animal.animal-soft .badge-label { background: var(--animal-soft-bg); border: 1px solid var(--animal-border); color: var(--animal-soft-text); }
+.badge.animal.animal-soft .badge-label::before { background: var(--animal-soft-icon); }
+.badge.animal.animal-soft.no-border .badge-label { border-color: transparent; }
+.badge.animal.animal-heavy .badge-label { background: var(--animal-heavy-bg); border: 1px solid var(--animal-border); color: var(--animal-heavy-text); }
+.badge.animal.animal-heavy .badge-label::before { background: var(--animal-heavy-icon); }
+.badge.animal.animal-heavy.no-border .badge-label { border-color: transparent; }
+.badge-icon.animal.animal-soft { background: var(--animal-soft-bg); border: 1px solid var(--animal-border); color: var(--animal-soft-icon); border-radius: 50%; }
+.badge-icon.animal.animal-soft.no-border { border-color: transparent; }
+.badge-icon.animal.animal-heavy { background: var(--animal-heavy-bg); border: 1px solid var(--animal-border); color: var(--animal-heavy-icon); border-radius: 50%; }
+.badge-icon.animal.animal-heavy.no-border { border-color: transparent; }
+.badge-icon.animal.square { border-radius: 4px; }
+
+/* Rework — Scooter badge variants */
+.badge.scooter.scooter-soft .badge-label { background: var(--scooter-soft-bg); border: 1px solid var(--scooter-border); color: var(--scooter-soft-text); }
+.badge.scooter.scooter-soft .badge-label::before { background: var(--scooter-soft-icon); }
+.badge.scooter.scooter-soft.no-border .badge-label { border-color: transparent; }
+.badge.scooter.scooter-heavy .badge-label { background: var(--scooter-heavy-bg); border: 1px solid var(--scooter-border); color: var(--scooter-heavy-text); }
+.badge.scooter.scooter-heavy .badge-label::before { background: var(--scooter-heavy-icon); }
+.badge.scooter.scooter-heavy.no-border .badge-label { border-color: transparent; }
+.badge-icon.scooter.scooter-soft { background: var(--scooter-soft-bg); border: 1px solid var(--scooter-border); color: var(--scooter-soft-icon); border-radius: 50%; }
+.badge-icon.scooter.scooter-soft.no-border { border-color: transparent; }
+.badge-icon.scooter.scooter-heavy { background: var(--scooter-heavy-bg); border: 1px solid var(--scooter-border); color: var(--scooter-heavy-icon); border-radius: 50%; }
+.badge-icon.scooter.scooter-heavy.no-border { border-color: transparent; }
+.badge-icon.scooter.square { border-radius: 4px; }
+
+/* Rework — Fozzy badge variants */
+.badge.fozzy.fozzy-soft .badge-label { background: var(--fozzy-soft-bg); border: 1px solid var(--fozzy-border); color: var(--fozzy-soft-text); }
+.badge.fozzy.fozzy-soft .badge-label::before { background: var(--fozzy-soft-icon); }
+.badge.fozzy.fozzy-soft.no-border .badge-label { border-color: transparent; }
+.badge.fozzy.fozzy-heavy .badge-label { background: var(--fozzy-heavy-bg); border: 1px solid var(--fozzy-border); color: var(--fozzy-heavy-text); }
+.badge.fozzy.fozzy-heavy .badge-label::before { background: var(--fozzy-heavy-icon); }
+.badge.fozzy.fozzy-heavy.no-border .badge-label { border-color: transparent; }
+.badge-icon.fozzy.fozzy-soft { background: var(--fozzy-soft-bg); border: 1px solid var(--fozzy-border); color: var(--fozzy-soft-icon); border-radius: 50%; }
+.badge-icon.fozzy.fozzy-soft.no-border { border-color: transparent; }
+.badge-icon.fozzy.fozzy-heavy { background: var(--fozzy-heavy-bg); border: 1px solid var(--fozzy-border); color: var(--fozzy-heavy-icon); border-radius: 50%; }
+.badge-icon.fozzy.fozzy-heavy.no-border { border-color: transparent; }
+.badge-icon.fozzy.square { border-radius: 4px; }
+
+/* Rework — Dr. Teeth badge variants */
+.badge.dr-teeth.dr-teeth-soft .badge-label { background: var(--dr-teeth-soft-bg); border: 1px solid var(--dr-teeth-border); color: var(--dr-teeth-soft-text); }
+.badge.dr-teeth.dr-teeth-soft .badge-label::before { background: var(--dr-teeth-soft-icon); }
+.badge.dr-teeth.dr-teeth-soft.no-border .badge-label { border-color: transparent; }
+.badge.dr-teeth.dr-teeth-heavy .badge-label { background: var(--dr-teeth-heavy-bg); border: 1px solid var(--dr-teeth-border); color: var(--dr-teeth-heavy-text); }
+.badge.dr-teeth.dr-teeth-heavy .badge-label::before { background: var(--dr-teeth-heavy-icon); }
+.badge.dr-teeth.dr-teeth-heavy.no-border .badge-label { border-color: transparent; }
+.badge-icon.dr-teeth.dr-teeth-soft { background: var(--dr-teeth-soft-bg); border: 1px solid var(--dr-teeth-border); color: var(--dr-teeth-soft-icon); border-radius: 50%; }
+.badge-icon.dr-teeth.dr-teeth-soft.no-border { border-color: transparent; }
+.badge-icon.dr-teeth.dr-teeth-heavy { background: var(--dr-teeth-heavy-bg); border: 1px solid var(--dr-teeth-border); color: var(--dr-teeth-heavy-icon); border-radius: 50%; }
+.badge-icon.dr-teeth.dr-teeth-heavy.no-border { border-color: transparent; }
+.badge-icon.dr-teeth.square { border-radius: 4px; }
+
+/* Rework — Bunson badge variants */
+.badge.bunson.bunson-soft .badge-label { background: var(--bunson-soft-bg); border: 1px solid var(--bunson-border); color: var(--bunson-soft-text); }
+.badge.bunson.bunson-soft .badge-label::before { background: var(--bunson-soft-icon); }
+.badge.bunson.bunson-soft.no-border .badge-label { border-color: transparent; }
+.badge.bunson.bunson-heavy .badge-label { background: var(--bunson-heavy-bg); border: 1px solid var(--bunson-border); color: var(--bunson-heavy-text); }
+.badge.bunson.bunson-heavy .badge-label::before { background: var(--bunson-heavy-icon); }
+.badge.bunson.bunson-heavy.no-border .badge-label { border-color: transparent; }
+.badge-icon.bunson.bunson-soft { background: var(--bunson-soft-bg); border: 1px solid var(--bunson-border); color: var(--bunson-soft-icon); border-radius: 50%; }
+.badge-icon.bunson.bunson-soft.no-border { border-color: transparent; }
+.badge-icon.bunson.bunson-heavy { background: var(--bunson-heavy-bg); border: 1px solid var(--bunson-border); color: var(--bunson-heavy-icon); border-radius: 50%; }
+.badge-icon.bunson.bunson-heavy.no-border { border-color: transparent; }
+.badge-icon.bunson.square { border-radius: 4px; }
+
+/* Rework — Miss Piggy badge variants */
+.badge.miss-piggy.miss-piggy-soft .badge-label { background: var(--miss-piggy-soft-bg); border: 1px solid var(--miss-piggy-border); color: var(--miss-piggy-soft-text); }
+.badge.miss-piggy.miss-piggy-soft .badge-label::before { background: var(--miss-piggy-soft-icon); }
+.badge.miss-piggy.miss-piggy-soft.no-border .badge-label { border-color: transparent; }
+.badge.miss-piggy.miss-piggy-heavy .badge-label { background: var(--miss-piggy-heavy-bg); border: 1px solid var(--miss-piggy-border); color: var(--miss-piggy-heavy-text); }
+.badge.miss-piggy.miss-piggy-heavy .badge-label::before { background: var(--miss-piggy-heavy-icon); }
+.badge.miss-piggy.miss-piggy-heavy.no-border .badge-label { border-color: transparent; }
+.badge-icon.miss-piggy.miss-piggy-soft { background: var(--miss-piggy-soft-bg); border: 1px solid var(--miss-piggy-border); color: var(--miss-piggy-soft-icon); border-radius: 50%; }
+.badge-icon.miss-piggy.miss-piggy-soft.no-border { border-color: transparent; }
+.badge-icon.miss-piggy.miss-piggy-heavy { background: var(--miss-piggy-heavy-bg); border: 1px solid var(--miss-piggy-border); color: var(--miss-piggy-heavy-icon); border-radius: 50%; }
+.badge-icon.miss-piggy.miss-piggy-heavy.no-border { border-color: transparent; }
+.badge-icon.miss-piggy.square { border-radius: 4px; }
+
+/* Rework — Gonzo badge variants */
+.badge.gonzo.gonzo-soft .badge-label { background: var(--gonzo-soft-bg); border: 1px solid var(--gonzo-border); color: var(--gonzo-soft-text); }
+.badge.gonzo.gonzo-soft .badge-label::before { background: var(--gonzo-soft-icon); }
+.badge.gonzo.gonzo-soft.no-border .badge-label { border-color: transparent; }
+.badge.gonzo.gonzo-heavy .badge-label { background: var(--gonzo-heavy-bg); border: 1px solid var(--gonzo-border); color: var(--gonzo-heavy-text); }
+.badge.gonzo.gonzo-heavy .badge-label::before { background: var(--gonzo-heavy-icon); }
+.badge.gonzo.gonzo-heavy.no-border .badge-label { border-color: transparent; }
+.badge-icon.gonzo.gonzo-soft { background: var(--gonzo-soft-bg); border: 1px solid var(--gonzo-border); color: var(--gonzo-soft-icon); border-radius: 50%; }
+.badge-icon.gonzo.gonzo-soft.no-border { border-color: transparent; }
+.badge-icon.gonzo.gonzo-heavy { background: var(--gonzo-heavy-bg); border: 1px solid var(--gonzo-border); color: var(--gonzo-heavy-icon); border-radius: 50%; }
+.badge-icon.gonzo.gonzo-heavy.no-border { border-color: transparent; }
+.badge-icon.gonzo.square { border-radius: 4px; }
+
+/* Rework — Uncle Deadly badge variants */
+.badge.uncle-deadly.uncle-deadly-soft .badge-label { background: var(--uncle-deadly-soft-bg); border: 1px solid var(--uncle-deadly-border); color: var(--uncle-deadly-soft-text); }
+.badge.uncle-deadly.uncle-deadly-soft .badge-label::before { background: var(--uncle-deadly-soft-icon); }
+.badge.uncle-deadly.uncle-deadly-soft.no-border .badge-label { border-color: transparent; }
+.badge.uncle-deadly.uncle-deadly-heavy .badge-label { background: var(--uncle-deadly-heavy-bg); border: 1px solid var(--uncle-deadly-border); color: var(--uncle-deadly-heavy-text); }
+.badge.uncle-deadly.uncle-deadly-heavy .badge-label::before { background: var(--uncle-deadly-heavy-icon); }
+.badge.uncle-deadly.uncle-deadly-heavy.no-border .badge-label { border-color: transparent; }
+.badge-icon.uncle-deadly.uncle-deadly-soft { background: var(--uncle-deadly-soft-bg); border: 1px solid var(--uncle-deadly-border); color: var(--uncle-deadly-soft-icon); border-radius: 50%; }
+.badge-icon.uncle-deadly.uncle-deadly-soft.no-border { border-color: transparent; }
+.badge-icon.uncle-deadly.uncle-deadly-heavy { background: var(--uncle-deadly-heavy-bg); border: 1px solid var(--uncle-deadly-border); color: var(--uncle-deadly-heavy-icon); border-radius: 50%; }
+.badge-icon.uncle-deadly.uncle-deadly-heavy.no-border { border-color: transparent; }
+.badge-icon.uncle-deadly.square { border-radius: 4px; }
+
+/* Rework — Sweetums badge variants */
+.badge.sweetums.sweetums-soft .badge-label { background: var(--sweetums-soft-bg); border: 1px solid var(--sweetums-border); color: var(--sweetums-soft-text); }
+.badge.sweetums.sweetums-soft .badge-label::before { background: var(--sweetums-soft-icon); }
+.badge.sweetums.sweetums-soft.no-border .badge-label { border-color: transparent; }
+.badge.sweetums.sweetums-heavy .badge-label { background: var(--sweetums-heavy-bg); border: 1px solid var(--sweetums-border); color: var(--sweetums-heavy-text); }
+.badge.sweetums.sweetums-heavy .badge-label::before { background: var(--sweetums-heavy-icon); }
+.badge.sweetums.sweetums-heavy.no-border .badge-label { border-color: transparent; }
+.badge-icon.sweetums.sweetums-soft { background: var(--sweetums-soft-bg); border: 1px solid var(--sweetums-border); color: var(--sweetums-soft-icon); border-radius: 50%; }
+.badge-icon.sweetums.sweetums-soft.no-border { border-color: transparent; }
+.badge-icon.sweetums.sweetums-heavy { background: var(--sweetums-heavy-bg); border: 1px solid var(--sweetums-border); color: var(--sweetums-heavy-icon); border-radius: 50%; }
+.badge-icon.sweetums.sweetums-heavy.no-border { border-color: transparent; }
+.badge-icon.sweetums.square { border-radius: 4px; }
+
+/* Rework — Sam badge variants */
+.badge.sam.sam-soft .badge-label { background: var(--sam-soft-bg); border: 1px solid var(--sam-border); color: var(--sam-soft-text); }
+.badge.sam.sam-soft .badge-label::before { background: var(--sam-soft-icon); }
+.badge.sam.sam-soft.no-border .badge-label { border-color: transparent; }
+.badge.sam.sam-heavy .badge-label { background: var(--sam-heavy-bg); border: 1px solid var(--sam-border); color: var(--sam-heavy-text); }
+.badge.sam.sam-heavy .badge-label::before { background: var(--sam-heavy-icon); }
+.badge.sam.sam-heavy.no-border .badge-label { border-color: transparent; }
+.badge-icon.sam.sam-soft { background: var(--sam-soft-bg); border: 1px solid var(--sam-border); color: var(--sam-soft-icon); border-radius: 50%; }
+.badge-icon.sam.sam-soft.no-border { border-color: transparent; }
+.badge-icon.sam.sam-heavy { background: var(--sam-heavy-bg); border: 1px solid var(--sam-border); color: var(--sam-heavy-icon); border-radius: 50%; }
+.badge-icon.sam.sam-heavy.no-border { border-color: transparent; }
+.badge-icon.sam.square { border-radius: 4px; }
+
+.rework-description {
+  margin: -8px 0 16px 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+body.dark .rework-description {
+  color: #aaa;
+}
+
+.tab-description {
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+}
+
+h4 {
+  font-size: 16px;
+  margin: 24px 0 12px 0;
+  font-weight: 600;
+}
+
+h3 {
+  margin-top: 40px;
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+.badge-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  border: 1px solid;
+}
+.badge-icon.lime {
+  background: var(--coreui-status-success-icon-background);
+  border-color: var(--coreui-status-success-icon-background);
+  color: var(--coreui-status-success-fill);
+}
+.badge-icon.pineapple {
+  background: var(--coreui-status-warn-icon-background);
+  border-color: var(--coreui-status-warn-icon-background);
+  color: var(--coreui-status-warn-fill);
+}
+.badge-icon.tangerine {
+  background: var(--coreui-supportive-tangerine-icon-background);
+  border-color: var(--coreui-supportive-tangerine-icon-background);
+  color: var(--coreui-supportive-tangerine-fill);
+}
+.badge-icon.apple {
+  background: var(--coreui-status-error-icon-background);
+  border-color: var(--coreui-status-error-icon-background);
+  color: var(--coreui-status-error-fill);
+}
+.badge-icon.plum {
+  background: var(--coreui-status-info-icon-background);
+  border-color: var(--coreui-status-info-icon-background);
+  color: var(--coreui-status-info-fill);
+}
+.badge-icon.watermelon {
+  background: var(--coreui-supportive-watermelon-icon-background);
+  border-color: var(--coreui-supportive-watermelon-icon-background);
+  color: var(--coreui-supportive-watermelon-fill);
+}
+.badge-icon.coconut {
+  background: var(--coreui-supportive-coconut-icon-background);
+  border-color: var(--coreui-supportive-coconut-icon-background);
+  color: var(--coreui-supportive-coconut-fill);
+}
+.badge-icon.raspberry {
+  background: var(--coreui-supportive-raspberry-icon-background);
+  border-color: var(--coreui-supportive-raspberry-icon-background);
+  color: var(--coreui-supportive-raspberry-fill);
+}
+.badge-icon.slate {
+  background: var(--coreui-status-neutral-icon-background);
+  border-color: var(--coreui-status-neutral-icon-background);
+  color: var(--coreui-status-neutral-fill);
+}
+.badge-icon.elderberry {
+  background: var(--coreui-supportive-elderberry-icon-background);
+  border-color: var(--coreui-supportive-elderberry-icon-background);
+  color: var(--coreui-supportive-elderberry-fill);
+}
+.badge-icon.blueberry {
+  background: var(--coreui-supportive-blueberry-icon-background);
+  border-color: var(--coreui-supportive-blueberry-icon-background);
+  color: var(--coreui-supportive-blueberry-fill);
+}
+
+/* Product tab — cards and table (CORE UI) */
+#product {
+  color: var(--coreui-component-primary-text);
+}
+
+.product-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.product-card {
+  background: var(--coreui-card-primary-background);
+  border: 1px solid var(--coreui-card-primary-border);
+  border-radius: 8px;
+  padding: 20px;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.product-card:hover {
+  background: var(--coreui-table-background--hover);
+}
+
+.product-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.product-card-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--coreui-component-secondary-text);
+}
+
+.product-card-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--coreui-component-primary-text);
+  line-height: 1.2;
+}
+
+.product-card-meta {
+  font-size: 12px;
+  color: var(--coreui-component-secondary-text);
+  margin-top: 6px;
+}
+
+.product-table-wrapper {
+  background: var(--coreui-table-primary-background);
+  border: 1px solid var(--coreui-table-primary-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.product-table th,
+.product-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--coreui-table-secondary-border);
+}
+
+.product-table th {
+  background: var(--coreui-table-header-background);
+  font-weight: 600;
+  color: var(--coreui-table-header-text);
+}
+
+.product-table tbody tr {
+  background: var(--coreui-table-primary-background);
+}
+
+.product-table tbody tr:hover {
+  background: var(--coreui-table-background--hover);
+}
+
+.product-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.product-table td {
+  color: var(--coreui-table-primary-text);
+}
